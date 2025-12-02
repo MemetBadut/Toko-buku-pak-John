@@ -35,17 +35,17 @@ class ProdukBukuController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(ProdukBuku $data_produk)
     {
-        //
+        return view('data_produk.show', compact('data_produk'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(ProdukBuku $data_produk)
     {
-        //
+        return view('data_produk.edit', compact('data_produk'));
     }
 
     /**

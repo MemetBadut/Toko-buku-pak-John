@@ -94,12 +94,16 @@
                                 <td class="px-6 py-4 text-center text-sm text-gray-600">{{ $buku->kategori_buku }}</td>
                                 <td class="px-6 py-4 text-center text-sm text-gray-600">{{ $buku->rating_buku }}</td>
                                 <td class="px-6 py-4">
-                                    <button class="text-gray-400 hover:text-gray-600 transition">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                                        </svg>
-                                    </button>
+                                    <a href="{{ route('data_produk.show', $buku->id) }}" class="inline-block">
+                                        <button class="text-gray-400 hover:text-gray-600 transition">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                                height="24" fill="currentColor">
+                                                <path
+                                                    d="M13 21V23H11V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H9C10.1947 3 11.2671 3.52375 12 4.35418C12.7329 3.52375 13.8053 3 15 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H13ZM20 19V5H15C13.8954 5 13 5.89543 13 7V19H20ZM11 19V7C11 5.89543 10.1046 5 9 5H4V19H11Z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
