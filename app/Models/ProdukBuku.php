@@ -9,10 +9,19 @@ class ProdukBuku extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama_buku', 'nama_penulis', 'kategori_buku', 'rating_buku'];
+    protected $fillable = [
+        'nama_buku',
+        'nama_penulis',
+        'rating_buku',
+        'slug',
+        'isbn',
+        'sinopsis',
+        'publisher',
+    ];
     protected $table = 'kumpulan_buku';
 
-    public function KategoriBuku(){
-        return $this->hasMany(KategoriBuku::class);
+    public function KategoriBuku()
+    {
+        return $this->belongsToMany(KategoriBuku::class, 'buku_kategori_pivot', 'buku_id', 'kategori_id');
     }
 }

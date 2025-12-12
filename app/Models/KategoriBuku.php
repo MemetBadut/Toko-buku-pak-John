@@ -13,7 +13,7 @@ class KategoriBuku extends Model
     protected $table = 'kategori_buku';
 
     public function ProdukBuku(){
-        return $this->belongsTo(ProdukBuku::class);
+        return $this->belongsToMany(ProdukBuku::class, 'buku_kategori_pivot','kategori_id', 'buku_id');
     }
 }
 

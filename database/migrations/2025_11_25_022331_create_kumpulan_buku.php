@@ -15,9 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('nama_buku');
             $table->string('nama_penulis');
-            $table->foreignId('kategori_buku')->constrained()->onDelete('cascade');
             $table->float('rating_buku');
             $table->string('slug')->unique();
+            $table->string('isbn', 20);
+            $table->integer('halaman_buku');
+            $table->string('tanggal_publish');
+            $table->longText('sinopsis');
+            $table->string('publisher');
             $table->timestamps();
         });
     }

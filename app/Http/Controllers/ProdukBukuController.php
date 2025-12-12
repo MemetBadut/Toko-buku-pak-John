@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\KategoriBuku;
 use App\Models\ProdukBuku;
 use Illuminate\Http\Request;
 
@@ -10,10 +11,29 @@ class ProdukBukuController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data_buku = ProdukBuku::all();
+        $keyword = $request->input('search');
+
+        // $data_buku = ProdukBuku::query();
+        $data_buku = ProdukBuku::with('KategoriBuku');
+
+        if ($keyword) {
+            $data_buku = $data_buku->where('nama_buku', 'like', "%{$keyword}%")
+                ->orWhere('nama_penulis', 'like', "%{$keyword}%");
+        }
+
+        $data_buku = $data_buku->orderByDesc('id')->paginate(5);
+
+
         return view('data_produk.index', compact('data_buku'));
+    }
+
+    public function test()
+    {
+        $data_test = ProdukBuku::all();
+        $data_test = ProdukBuku::paginate(5);
+        return view('data_produk.test', compact('data_test'));
     }
 
     /**
@@ -21,15 +41,16 @@ class ProdukBukuController extends Controller
      */
     public function create()
     {
-        return view('data_produk.create');
+        $kategori = KategoriBuku::all();
+        $kategori = KategoriBuku::pluck('id');
+        return view('data_produk.create', compact('kategori'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-
+    public function store(Request $request) {
+        
     }
 
     /**

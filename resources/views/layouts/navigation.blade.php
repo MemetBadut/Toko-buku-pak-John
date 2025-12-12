@@ -22,8 +22,8 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('kategori_produk.index')" :active="request()->routeIs('kategori_produk.index')">
-                        {{ __('Kategori Buku') }}
+                    <x-nav-link :href="route('data_produk.test')" :active="request()->routeIs('data_produk.test')">
+                        {{ __('Test DUmlu') }}
                     </x-nav-link>
                 </div>
             </div>
