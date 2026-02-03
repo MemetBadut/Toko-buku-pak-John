@@ -15,7 +15,7 @@
             <div class="px-6 py-5 border-b border-gray-200">
                 <div class="flex items-center justify-between">
                     {{-- Searchbar start --}}
-                    <form action="{{ route('data_produk.index') }}" method="GET">
+                    <form action="{{ route('produk_buku.index') }}" method="GET">
                         <div class="flex items-center gap-3 bg-white rounded-2xl shadow-xl border border-gray-100 p-2">
                             <div class="relative flex-1">
                                 <input type="text" name="search" placeholder="What are you looking for?"
@@ -39,7 +39,7 @@
                     {{-- Search bar end --}}
 
                     <div class="flex items-center gap-3">
-                        <a href="{{ route('data_produk.create') }}"
+                        <a href="{{ route('admin.produk_buku.create') }}"
                             class="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 16 16"
                                 stroke="currentColor" height="18" width="18">
@@ -113,7 +113,7 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center">
-                                        <a href="{{ route('data_produk.show', $buku->id) }}"
+                                        <a href="{{ route('produk_buku.show', $buku->id) }}"
                                             class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">
                                             <svg class="w-5 h-5" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
