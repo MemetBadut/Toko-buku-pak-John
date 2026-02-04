@@ -53,4 +53,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->role === self::ROLE_ADMIN;
     }
+
+    public function bookLoans(){
+        return $this->hasMany(BookLoans::class, 'user_id', 'id');
+    }
+
 }

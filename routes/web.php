@@ -4,12 +4,14 @@ use App\Http\Controllers\ProdukBukuController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController as DashboardAdmin;
 use App\Http\Controllers\AuthorBukuController;
+use App\Http\Controllers\HomePageController;
 use Illuminate\Support\Facades\Route;
 
 // Halaman Guest
-Route::get('/', function () {
-    return view('dashboard');
-})->name('home');
+Route::get('/', [HomePageController::class, 'index'])
+    ->name('home')
+    ->middleware('auth');
+
 
 //Untuk Produk
 Route::get('/produk_buku',  [ProdukBukuController::class, 'index'])->name('produk_buku.index');

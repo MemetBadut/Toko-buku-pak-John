@@ -17,7 +17,10 @@ class AuthorBukuFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nama_penulis' => fake('id_ID')->name(),
+            'bio_penulis' => fake('id_ID')->paragraph(),
+            'foto_penulis' => fake('id_ID')->imageUrl(200, 200, 'people'),
+            'slug' => fake('id_ID')->slug(),
         ];
     }
 }

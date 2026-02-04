@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('kumpulan_buku', function (Blueprint $table) {
             $table->id();
             $table->string('nama_buku');
-            $table->string('nama_penulis');
+            $table->foreignId('author_id')->constrained('author_bukus')->onDelete('cascade');
             $table->float('rating_buku');
             $table->string('slug')->unique();
             $table->string('isbn', 20);
             $table->integer('halaman_buku');
             $table->string('tanggal_publish');
             $table->longText('sinopsis');
-            $table->string('publisher');
+            $table->foreignId('publisher_id')->constrained('publisher')->onDelete('cascade');
             $table->timestamps();
         });
     }

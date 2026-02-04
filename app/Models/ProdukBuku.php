@@ -11,7 +11,7 @@ class ProdukBuku extends Model
 
     protected $fillable = [
         'nama_buku',
-        'nama_penulis',
+        'author_id',
         'rating_buku',
         'slug',
         'isbn',
@@ -20,8 +20,16 @@ class ProdukBuku extends Model
     ];
     protected $table = 'kumpulan_buku';
 
-    public function KategoriBuku()
+    public function kategoriBuku()
     {
         return $this->belongsToMany(KategoriBuku::class, 'buku_kategori_pivot', 'buku_id', 'kategori_id');
+    }
+
+    public function authorBuku(){
+        return $this->belongsTo(AuthorBuku::class, 'author_id');
+    }
+
+    public function publisher(){
+        return $this->belongsTo(Publisher::class, 'publisher_id');
     }
 }

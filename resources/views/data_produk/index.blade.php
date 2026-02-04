@@ -19,8 +19,7 @@
                         <div class="flex items-center gap-3 bg-white rounded-2xl shadow-xl border border-gray-100 p-2">
                             <div class="relative flex-1">
                                 <input type="text" name="search" placeholder="What are you looking for?"
-                                    class="w-full px-4 py-2 pl-11 bg-transparent focus:outline-none text-sm"
-                                    value="{ }}">
+                                    class="w-full px-4 py-2 pl-11 bg-transparent focus:outline-none text-sm">
                                 <svg class="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2
